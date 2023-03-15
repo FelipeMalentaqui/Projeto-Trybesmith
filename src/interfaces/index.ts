@@ -5,7 +5,7 @@ export interface IProducts {
   orderId?: number;
 }
 
-export interface IUsers {
+export interface IUser {
   id: number;
   username: string;
   vacation: string;
