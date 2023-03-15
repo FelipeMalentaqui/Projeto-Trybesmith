@@ -20,8 +20,6 @@ const create = async (name: string, amount: string): Promise<number> => {
   return insertId;
 };
 
-// getAll().then((products) => console.log(products));
-
 const productModel = { getAll, create };
 
 export default productModel;
