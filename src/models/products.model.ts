@@ -15,18 +15,10 @@ const create = async (name: string, amount: string): Promise<number> => {
     'INSERT INTO Trybesmith.products (name, amount) VALUES(?, ?)',
     [name, amount],
   );
+  console.log('model ', insertId);
+  
   return insertId;
 };
-
-// const login = async (loginU: ILogin): Promise<IUser[]> => {
-//   const { username } = loginU;
-
-//   const [result] = await connection.execute<RowDataPacket[] & IUser[]>(`
-//   SELECT * FROM trybesmith.users WHERE username = ?;
-//   `, [username]);
-
-//   return result;
-// };
 
 // getAll().then((products) => console.log(products));
 

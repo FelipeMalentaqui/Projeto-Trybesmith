@@ -5,7 +5,7 @@ import { create, getAll } from '../controllers/products.controller'; // podemos 
 
 const router = express.Router();
 
-router.put('/', create);
+router.post('/', create);
 router.get('/', getAll);
 
 export default router;
