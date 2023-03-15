@@ -6,10 +6,10 @@ export interface IProducts {
 }
 
 export interface IUser {
-  id: number;
+  id?: string;
   username: string;
-  vacation: string;
-  level: number;
+  vocation: string;
+  level: string;
   password: string;
 }
 

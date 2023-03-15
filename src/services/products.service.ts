@@ -9,7 +9,6 @@ const getAll = async (): Promise<IProducts[]> => {
 
 const create = async (name: string, amount: string) => {
   const newProduct = await productModel.create(name, amount);
-  console.log('>>>>>>>>>>', newProduct);
   
   return { id: newProduct, name, amount };
 };

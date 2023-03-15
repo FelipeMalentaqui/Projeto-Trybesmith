@@ -1,17 +1,18 @@
-// import { ResultSetHeader } from 'mysql2';
-// // import { IProducts } from '../interfaces';
-// import connection from './connection';
+import { ResultSetHeader } from 'mysql2';
+import { IUser } from '../interfaces';
+// import { IProducts } from '../interfaces';
+import connection from './connection';
 
-// const createUser = async (username: string, vocation: string, level: number, password: string): Promise<number> => {
-//   const [{ insertId }] = await connection.execute<ResultSetHeader>(
-//     'INSERT INTO Trybesmith.products (username, vocation, level, password) VALUES(?, ?, ?, ?)',
-//     [username, vocation, level, password],
-//   );
-//   console.log('model ', insertId);
+const createUser = async (user:IUser): Promise<number> => {
+  const [{ insertId }] = await connection.execute<ResultSetHeader>(
+    'INSERT INTO Trybesmith.users (username, vocation, level, password) VALUES(?, ?, ?, ?)',
+    [user.username, user.vocation, user.level, user.password],
+  );
+  console.log('model ', insertId);
   
-//   return insertId;
-// };
+  return insertId;
+};
 
-// const userModel = { createUser };
+const userModel = { createUser };
 
-// export default userModel;
+export default userModel;
