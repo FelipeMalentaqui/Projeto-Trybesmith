@@ -4,7 +4,7 @@ import connection from './connection';
 
 const getAll = async (): Promise<IProducts[]> => {
   const [result] = await connection.execute<IProducts[] & RowDataPacket[]>(
-    'SELECT * FROM trybesmith.products',
+    'SELECT * FROM Trybesmith.products',
   );
 
   return result;

@@ -1,11 +1,11 @@
 import express from 'express';
 
-// import { create, getAll } from '../controllers/products.controller'; // podemos faser desta forma tambem, que ja pega direto a função que queremos
-import * as productController from '../controllers/products.controller';
+import { create, getAll } from '../controllers/products.controller'; // podemos fazer desta forma tambem, que ja pega direto a função que queremos
+// import * as productController from '../controllers/products.controller';
 
 const router = express.Router();
 
-router.put('/', productController.create);
-router.get('/', productController.getAll);
+router.put('/', create);
+router.get('/', getAll);
 
 export default router;
