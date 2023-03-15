@@ -1,5 +1,5 @@
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { ILogin, IProducts, IUser } from '../interfaces';
+import { IProducts } from '../interfaces';
 import connection from './connection';
 
 const getAll = async (): Promise<IProducts[]> => {
@@ -18,18 +18,18 @@ const create = async (name: string, amount: string): Promise<number> => {
   return insertId;
 };
 
-const login = async (loginU: ILogin): Promise<IUser[]> => {
-  const { username } = loginU;
+// const login = async (loginU: ILogin): Promise<IUser[]> => {
+//   const { username } = loginU;
 
-  const [result] = await connection.execute<RowDataPacket[] & IUser[]>(`
-  SELECT * FROM trybesmith.users WHERE username = ?;
-  `, [username]);
+//   const [result] = await connection.execute<RowDataPacket[] & IUser[]>(`
+//   SELECT * FROM trybesmith.users WHERE username = ?;
+//   `, [username]);
 
-  return result;
-};
+//   return result;
+// };
 
 // getAll().then((products) => console.log(products));
 
-const productModel = { getAll, create, login };
+const productModel = { getAll, create };
 
 export default productModel;
