@@ -5,9 +5,13 @@ import loginService from '../services/login.service';
 const login = async (req: Request<object, object, ILogin>, res: Response) => {
   const { body } = req;
 
-  const token = await loginService.login(body);
+  const { type, message } = await loginService.login(body);
 
-  return res.status(200).json({ token });
+  if (type) return res.status(404).json({ message });
+
+  return res.status(200).json({ token: message });
 };
 
-export default login;
+const userLogin = { login };
+
+export default userLogin;
