@@ -16,7 +16,7 @@ const login = async (loginU: ILogin) => {
   const users = await loginModel.login(loginU);
   
   if (!users || users.password !== loginU.password) {
-    return { type: 'INVALID', message: 'invalid email or password' };
+    return { type: 'INVALID', message: 'Username or password invalid' };
   }
   const token = createToken({ ...users });
 

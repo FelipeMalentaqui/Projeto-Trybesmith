@@ -7,7 +7,7 @@ const login = async (req: Request<object, object, ILogin>, res: Response) => {
 
   const { type, message } = await loginService.login(body);
 
-  if (type) return res.status(404).json({ message });
+  if (type) return res.status(401).json({ message });
 
   return res.status(200).json({ token: message });
 };
